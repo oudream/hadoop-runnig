@@ -1,0 +1,29 @@
+hadoop-master
+ens33     Link encap:Ethernet  HWaddr 00:0c:29:f7:74:87
+          inet addr:10.31.58.86  Bcast:10.31.58.255  Mask:255.255.255.0
+          inet6 addr: fe80::5cbb:1c1b:afdd:4fcb/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:3286855 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:1155297 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:1489347033 (1.4 GB)  TX bytes:705196698 (705.1 MB)
+
+hadoop-slave1
+ens33     Link encap:Ethernet  HWaddr 00:50:56:27:70:f6
+          inet addr:10.31.58.99  Bcast:10.31.58.255  Mask:255.255.255.0
+          inet6 addr: fe80::e7f:6a10:7b6a:c356/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2015701 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:449204 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:426787958 (426.7 MB)  TX bytes:182964388 (182.9 MB)
+
+hadoop-slave2
+ens33     Link encap:Ethernet  HWaddr 00:50:56:2f:b8:95
+          inet addr:10.31.58.101  Bcast:10.31.58.255  Mask:255.255.255.0
+          inet6 addr: fe80::6f5:5599:9395:fc/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2015550 errors:0 dropped:1 overruns:0 frame:0
+          TX packets:440915 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:392559260 (392.5 MB)  TX bytes:176755319 (176.7 MB)

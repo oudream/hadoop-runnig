@@ -1,0 +1,38 @@
+ClassLoader
+
+ 当我准备想放弃的时候，突然我醒悟了一下。是不是，我修改参数的时候没有关掉docker引擎导致配置写不进去呢？但是，我就使用 service docker stop 命令先关掉docker的引擎。然后修改刚才的参数重启后。我没有使用 docker ps 去查看运行中的容器，直接有查看了刚才的那个参数的值，binggo,变成了no。当时，我心里大定，着一定OK了。果不其然，当我使用docker ps 命令去查看的是，终于没有看到我刚才修改的容器了，当我在用docker ps -a 查看所有的容器的时候，发现那个容器静静的躺在列表中。这个问题圆满解决。
+
+To use MySQL with Hive, you must download the MySQL Connector/J JDBC Driver from MySQL. Once downloaded to the Ambari Server host, run: 
+ambari-server setup --jdbc-db=mysql --jdbc-driver=/path/to/mysql/mysql-connector-java.jar
+
+NameNode installed on hadoop-master
+SNameNode installed on hadoop-slave1
+ResourceManager installed on hadoop-slave1
+History Server installed on hadoop-slave1
+HiveServer2 installed on hadoop-slave1
+HBase Master installed on hadoop-master
+Oozie Server installed on hadoop-slave1
+
+Traceback (most recent call last):
+  File "/var/lib/ambari-agent/cache/stacks/HDP/2.0.6/hooks/before-START/scripts/hook.py", line 43, in <module>
+    BeforeStartHook().execute()
+  File "/usr/lib/python2.6/site-packages/resource_management/libraries/script/script.py", line 375, in execute
+    method(env)
+  File "/var/lib/ambari-agent/cache/stacks/HDP/2.0.6/hooks/before-START/scripts/hook.py", line 38, in hook
+    setup_unlimited_key_jce_policy()
+  File "/var/lib/ambari-agent/cache/stacks/HDP/2.0.6/hooks/before-START/scripts/shared_initialization.py", line 225, in setup_unlimited_key_jce_policy
+    raise Fail("The unlimited key JCE policy needs to be installed; however the JCE policy zip is not specified.")
+resource_management.core.exceptions.Fail: The unlimited key JCE policy needs to be installed; however the JCE policy zip is not specified.
+
+resource_management.libraries.providers.hdfs_resource.WebHDFSCallException: Execution of 'curl -sS -L -w '%{http_code}' -X GET 'http://hadoop-master:50070/webhdfs/v1/tmp?op=GETFILESTATUS&user.name=hdfs'' returned status_code=502.
+
+
+http_proxy="http://10.31.58.78:1080/"
+https_proxy="https://10.31.58.78:1080/"
+no_proxy=localhost,127.0.0.0,127.0.1.1,127.0.1.1,local.home,10.31.58.86,10.31.58.99,10.31.58.101
+
+
+Important: You may also need to restart other services for the newly added services to function properly (for example, HDFS and YARN/MapReduce need to be restarted after adding Oozie). After closing this wizard, please restart all services that have the restart indicator  next to the service name.
+
+
+- Execute['export HIVE_CONF_DIR=/usr/hdp/current/hive-metastore/conf/conf.server ; /usr/hdp/current/hive-server2-hive2/bin/schematool -initSchema -dbType mysql -userName hive -passWord [PROTECTED] -verbose'] {'not_if': "ambari-sudo.sh su hive -l -s /bin/bash -c 'export HIVE_CONF_DIR=/usr/hdp/current/hive-metastore/conf/conf.server ; /usr/hdp/current/hive-server2-hive2/bin/schematool -info -dbType mysql -userName hive -passWord [PROTECTED] -verbose'", 'user': 'hive'}
